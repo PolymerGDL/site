@@ -1,13 +1,33 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../pgdl-header/pgdl-header.html">
 
 <dom-module id="pgdl-app">
   <template>
-    
+    <style>
+      pgdl-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+    </style>
+    <pgdl-header title="[[title]]">
+        <img class="header-icon" slot="header-icon" 
+        src="https://www.polymer-project.org/images/logos/p-logo.png" alt="Polymer logo">
+    </pgdl-header>
   </template>
   <script>
     
     class PgdlApp extends Polymer.Element {
       static get is() { return 'pgdl-app'; }
+      static get properties() { 
+        return {
+          title: {
+            type: String,
+            value: 'Polymer GDL'
+          }
+        }
+      }
     }
 
     window.customElements.define(PgdlApp.is, PgdlApp);

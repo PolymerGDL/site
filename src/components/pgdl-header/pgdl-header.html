@@ -1,0 +1,50 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pgdl-header">
+  <template>
+    <style>
+      .header {
+        padding: 0.5rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      ::slotted(.header-icon) {
+        width: auto;
+        max-width: 20%;
+        max-height: 1.8rem;
+      }
+
+      .header-title {
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+      }
+
+      ::slotted(.header-nav) {
+        display: none;
+      }
+    </style>
+    <header class="header">
+      <slot name="header-icon"></slot>
+      <span class="header-title">[[title]]</span>
+      <slot name="header-nav"></slot>
+    </header>
+  </template>
+  <script>
+    
+    class PgdlHeader extends Polymer.Element {
+      static get is() { return 'pgdl-header'; }
+      static get properties() { 
+        return {
+          title: {
+            type: String,
+            value: 'Header title'
+          }
+        }
+      }
+    }
+
+    window.customElements.define(PgdlHeader.is, PgdlHeader);
+  </script>
+</dom-module>
