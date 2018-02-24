@@ -1,5 +1,6 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../pgdl-header/pgdl-header.html">
+<link rel="import" href="../pgdl-splash/pgdl-splash.html">
 
 <dom-module id="pgdl-app">
   <template>
@@ -10,11 +11,21 @@
         right: 0;
         left: 0;
       }
+
+      pgdl-splash {
+        position: relative;
+        top: 2.5rem;
+      }
     </style>
     <pgdl-header title="[[title]]">
         <img class="header-icon" slot="header-icon" 
         src="https://www.polymer-project.org/images/logos/p-logo.png" alt="Polymer logo">
     </pgdl-header>
+    <pgdl-splash>
+      <img class="splash-image" slot="splash-image" 
+        src="https://www.polymer-project.org/images/logos/p-logo.png" alt="Polymer logo">
+      <h1 class="splash-title" slot="splash-title">[[title]]</h1>
+    </pgdl-splash>
   </template>
   <script>
     

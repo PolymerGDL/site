@@ -1,0 +1,38 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pgdl-splash">
+  <template>
+    <style>
+
+      .splash {
+        width: 100%;
+        padding: 0.5rem 0rem;
+        min-height: 4rem;
+      }
+
+      ::slotted(.splash-image) {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 50%;
+        height: auto;
+      }
+
+      ::slotted(.splash-title) {
+        text-align: center;
+      }
+    </style>
+    <section class="splash">
+      <slot name="splash-image"></slot>
+      <slot name="splash-title"></slot>
+      <slot></slot>
+    </section>
+  </template>
+  <script>
+    
+    class PgdlSplash extends Polymer.Element {
+      static get is() { return 'pgdl-splash'; }
+    }
+
+    window.customElements.define(PgdlSplash.is, PgdlSplash);
+  </script>
+</dom-module>
