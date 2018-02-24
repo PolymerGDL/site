@@ -1,6 +1,7 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../pgdl-header/pgdl-header.html">
 <link rel="import" href="../pgdl-splash/pgdl-splash.html">
+<link rel="import" href="../pgdl-section/pgdl-section.html">
 
 <dom-module id="pgdl-app">
   <template>
@@ -26,6 +27,11 @@
         src="https://www.polymer-project.org/images/logos/p-logo.png" alt="Polymer logo">
       <h1 class="splash-title" slot="splash-title">[[title]]</h1>
     </pgdl-splash>
+    <pgdl-section title="event.target">
+      <p slot="content">
+        Grupo de usuarios interesados en tecnologías de desarrollo web, prestando mayor énfasis a polymer como herramienta para el desarrollo de componentes.
+      </p>
+    </pgdl-section>
   </template>
   <script>
     
