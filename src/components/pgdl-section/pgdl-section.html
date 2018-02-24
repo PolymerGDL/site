@@ -1,0 +1,54 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pgdl-section">
+  <template>
+    <style>
+      .container-title {
+        margin: 2rem 0rem 1rem 0rem;
+        text-align: center;
+      }
+      .container-content {
+        padding: 0rem 2rem;
+        text-align: justify;
+      }
+      .container-footer {
+        margin: 1.5rem auto;
+        width: 90%;
+      }
+      .separator {
+        border: black solid 0.1rem;
+      }
+    </style>
+    <section>
+      <header class="container-title">
+          <slot name="title">
+            <h2>[[title]]</h2>
+          </slot>
+      </header>
+      <article class="container-content">
+        <slot name="content"></slot>
+      </article>
+      <footer class="container-footer">
+        <slot name="footer">
+          <div class="separator"></div>
+        </slot>
+      </footer>
+    </section>
+  </template>
+  <script>
+    
+    class PgdlSection extends Polymer.Element {
+      static get is() { return 'pgdl-section'; }
+      static get properties() { 
+        return {
+          title: {
+            type: String,
+            value: 'Section title'
+          }
+        }
+      }
+    }
+
+    window.customElements.define(PgdlSection.is, PgdlSection);
+  </script>
+</dom-module>
