@@ -1,0 +1,38 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pgdl-footer">
+  <template>
+    <style>
+      :host {
+      }
+      .footer {
+      }
+
+      ::slotted(.footer-icon) {
+      }
+
+      .footer-title {
+      }
+    </style>
+    <footer class="footer">
+      <slot name="footer-icon"></slot>
+      <span class="footer-title">[[title]]</span>
+    </footer>
+  </template>
+  <script>
+    
+    class PgdlFooter extends Polymer.Element {
+      static get is() { return 'pgdl-footer'; }
+      static get properties() { 
+        return {
+          title: {
+            type: String,
+            value: 'Footer title'
+          }
+        }
+      }
+    }
+
+    window.customElements.define(PgdlFooter.is, PgdlFooter);
+  </script>
+</dom-module>
